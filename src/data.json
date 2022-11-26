@@ -3,7 +3,7 @@
     {
       "type": "reaction",
       "person": "Mark Webber",
-      "pic": "../public/assets/images/avatar-mark-webber.webp",
+      "pic": "./assets/images/avatar-mark-webber.webp",
       "post": "My first tournament today!",
       "time": "1m ago",
       "read": "false"
@@ -11,8 +11,8 @@
     {
       "type": "follow",
       "person": "Angela Gray",
-      "pic": "../public/assets/images/avatar-angela-gray.webp",
-      "time": "1m ago",
+      "pic": "./assets/images/avatar-angela-gray.webp",
+      "time": "5m ago",
       "read": "false"
     },
     {
@@ -20,7 +20,7 @@
       "action": "joined",
       "group": "Chess Club",
       "person": "Jacob Thompson",
-      "pic": "../public/assets/images/avatar-jacob-thompson.webp",
+      "pic": "./assets/images/avatar-jacob-thompson.webp",
       "time": "1 day ago",
       "read": "false"
     },
@@ -28,7 +28,7 @@
       "type": "message",
       "message": "Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
       "person": "Rizky Hasanuddin",
-      "pic": "../public/assets/images/avatar-rizky-hasanuddin.webp",
+      "pic": "./assets/images/avatar-rizky-hasanuddin.webp",
       "time": "5 days ago",
       "read": "true"
     },
@@ -36,14 +36,14 @@
       "type": "comment",
       "url": "../public/assets/images/image-chess.webp",
       "person": "Kimberly Smith",
-      "pic": "../public/assets/images/avatar-kimberly-smith.webp",
+      "pic": "./assets/images/avatar-kimberly-smith.webp",
       "time": "1 week ago",
       "read": "true"
     },
     {
       "type": "reaction",
       "person": "Nathan Peterson",
-      "pic": "../public/assets/images/avatar-nathan-peterson.webp",
+      "pic": "./assets/images/avatar-nathan-peterson.webp",
       "post": "5 end-game strategies to increase your win rate",
       "time": "2 weeks ago",
       "read": "true"
@@ -53,7 +53,7 @@
       "action": "left",
       "group": "Chess Club",
       "person": "Anna Kim",
-      "pic": "../public/assets/images/avatar-anna-kim.webp",
+      "pic": "./assets/images/avatar-anna-kim.webp",
       "time": "2 weeks ago",
       "read": "true"
     }
