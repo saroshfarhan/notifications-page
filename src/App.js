@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Notifications from "./components/Notification";
 import data from "./data.json";
-//import dataValidated from "./dataValidated.json";
 
 function App() {
   const dataObj = JSON.parse(JSON.stringify(data.results));
