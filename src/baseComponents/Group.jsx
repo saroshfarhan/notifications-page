@@ -1,11 +1,12 @@
 import React from "react";
 
-function Group({ person, pic, time, read, action, group }) {
+function Group({ id, person, pic, time, read, action, group, handleClick }) {
   return (
     <div
       className={`flex items-start justify-start gap-4 rounded-md px-3  py-3 hover:cursor-pointer md:items-center lg:items-center ${
         JSON.parse(read) === false ? "bg-vlGrayBlue" : ""
       }`}
+      onClick={() => handleClick(id)}
     >
       <img src={pic} alt="profile" className="h-[40px] w-[40px] rounded-full" />
       <div>

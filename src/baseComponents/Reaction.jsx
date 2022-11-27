@@ -1,11 +1,12 @@
 import React from "react";
 
-function Reaction({ person, pic, post, time, read }) {
+function Reaction({ id, person, pic, post, time, read, handleClick }) {
   return (
     <div
-      className={`flex items-start justify-center gap-4 rounded-md px-3  py-3 hover:cursor-pointer md:items-center lg:items-center ${
+      className={`flex items-start justify-start gap-4 rounded-md px-3  py-3 hover:cursor-pointer md:items-center lg:items-start ${
         JSON.parse(read) === false ? "bg-vlGrayBlue" : ""
       }`}
+      onClick={() => handleClick(id)}
     >
       <img src={pic} alt="profile" className="h-[40px] w-[40px] rounded-full" />
       <div>

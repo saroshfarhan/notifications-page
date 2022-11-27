@@ -1,74 +1,88 @@
 import React from "react";
 import Reaction from "../baseComponents/Reaction";
 import Follow from "../baseComponents/Follow";
-import data from "../data.json";
 import Group from "../baseComponents/Group";
 import Message from "../baseComponents/Message";
 import Comment from "../baseComponents/Comment";
 
-function Notifications() {
+function Notifications({ jsData, onHandleReadAll, handleSingleNotifClick }) {
   let unreadNotif = 0;
-  for (let index = 0; index < data.results.length; index++) {
-    if (JSON.parse(data.results[index].read) === false) {
+  for (let index = 0; index < jsData.length; index++) {
+    if (JSON.parse(jsData[index].read) === false) {
       unreadNotif++;
     }
   }
 
-  const renderNotifications = data.results.map((result) => {
+  const renderNotifications = jsData.map((result) => {
     let element;
     switch (result.type) {
       case "reaction":
         element = (
           <Reaction
+            key={result.id}
+            id={result.id}
             person={result.person}
             pic={result.pic}
             post={result.post}
             time={result.time}
             read={result.read}
+            handleClick={handleSingleNotifClick}
           />
         );
         break;
       case "follow":
         element = (
           <Follow
+            key={result.id}
+            id={result.id}
             person={result.person}
             pic={result.pic}
             time={result.time}
             read={result.read}
+            handleClick={handleSingleNotifClick}
           />
         );
         break;
       case "group":
         element = (
           <Group
+            key={result.id}
+            id={result.id}
             person={result.person}
             pic={result.pic}
             time={result.time}
             read={result.read}
             action={result.action}
             group={result.group}
+            handleClick={handleSingleNotifClick}
           />
         );
         break;
       case "message":
         element = (
           <Message
+            key={result.id}
+            id={result.id}
             person={result.person}
             pic={result.pic}
             time={result.time}
             read={result.read}
             message={result.message}
+            handleClick={handleSingleNotifClick}
           />
         );
         break;
       case "comment":
         element = (
           <Comment
+            key={result.id}
+            id={result.id}
             person={result.person}
             pic={result.pic}
             time={result.time}
             read={result.read}
             url={result.url}
+            handleClick={handleSingleNotifClick}
           />
         );
         break;
@@ -91,6 +105,7 @@ function Notifications() {
         <button
           type="button"
           className="text-sm font-medium text-grayishBlue hover:text-primBlue"
+          onClick={onHandleReadAll}
         >
           Mark all as read
         </button>
