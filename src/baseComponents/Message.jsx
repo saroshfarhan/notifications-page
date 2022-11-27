@@ -3,7 +3,7 @@ import React from "react";
 function Message({ person, pic, time, read, message }) {
   return (
     <div
-      className={`flex items-start justify-start gap-4 rounded-md  px-3 py-3 ${
+      className={`flex items-start justify-start gap-4 rounded-md px-3  py-3 hover:cursor-pointer ${
         JSON.parse(read) === false ? "bg-vlGrayBlue" : ""
       }`}
     >

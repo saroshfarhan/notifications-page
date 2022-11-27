@@ -3,7 +3,7 @@ import React from "react";
 function Group({ person, pic, time, read, action, group }) {
   return (
     <div
-      className={`flex items-start justify-start gap-4 rounded-md  px-3 py-3 md:items-center lg:items-center ${
+      className={`flex items-start justify-start gap-4 rounded-md px-3  py-3 hover:cursor-pointer md:items-center lg:items-center ${
         JSON.parse(read) === false ? "bg-vlGrayBlue" : ""
       }`}
     >
