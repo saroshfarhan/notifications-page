@@ -34,7 +34,7 @@
     },
     {
       "type": "comment",
-      "url": "../public/assets/images/image-chess.webp",
+      "url": "./assets/images/image-chess.webp",
       "person": "Kimberly Smith",
       "pic": "./assets/images/avatar-kimberly-smith.webp",
       "time": "1 week ago",

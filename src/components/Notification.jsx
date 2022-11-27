@@ -2,6 +2,9 @@ import React from "react";
 import Reaction from "../baseComponents/Reaction";
 import Follow from "../baseComponents/Follow";
 import data from "../data.json";
+import Group from "../baseComponents/Group";
+import Message from "../baseComponents/Message";
+import Comment from "../baseComponents/Comment";
 
 function Notifications() {
   let unreadNotif = 0;
@@ -10,6 +13,28 @@ function Notifications() {
       unreadNotif++;
     }
   }
+
+  const renderNotifications = data.results.map((result) => {
+    switch (result.type) {
+      case "reaction":
+        return <Reaction />;
+
+      case "follow":
+        return <Follow />;
+
+      case "group":
+        return <Group />;
+
+      case "message":
+        return <Message />;
+
+      case "comment":
+        return <Comment />;
+
+      default:
+        break;
+    }
+  });
 
   return (
     <div className="mx-auto w-screen bg-white md:w-[680px] md:rounded-2xl lg:w-[680px] lg:rounded-2xl">
@@ -32,8 +57,12 @@ function Notifications() {
 
       {/* Notifications section start */}
       <div id="notifications-section" className="mx-6 mb-6 grid gap-2">
-        <Reaction />
+        {/* <Reaction />
         <Follow />
+        <Group />
+        <Message />
+        <Comment /> */}
+        {renderNotifications}
       </div>
       {/* Notifications section end */}
     </div>
