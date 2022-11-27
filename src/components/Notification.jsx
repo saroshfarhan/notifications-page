@@ -15,25 +15,67 @@ function Notifications() {
   }
 
   const renderNotifications = data.results.map((result) => {
+    let element;
     switch (result.type) {
       case "reaction":
-        return <Reaction />;
-
+        element = (
+          <Reaction
+            person={result.person}
+            pic={result.pic}
+            post={result.post}
+            time={result.time}
+            read={result.read}
+          />
+        );
+        break;
       case "follow":
-        return <Follow />;
-
+        element = (
+          <Follow
+            person={result.person}
+            pic={result.pic}
+            time={result.time}
+            read={result.read}
+          />
+        );
+        break;
       case "group":
-        return <Group />;
-
+        element = (
+          <Group
+            person={result.person}
+            pic={result.pic}
+            time={result.time}
+            read={result.read}
+            action={result.action}
+            group={result.group}
+          />
+        );
+        break;
       case "message":
-        return <Message />;
-
+        element = (
+          <Message
+            person={result.person}
+            pic={result.pic}
+            time={result.time}
+            read={result.read}
+            message={result.message}
+          />
+        );
+        break;
       case "comment":
-        return <Comment />;
-
+        element = (
+          <Comment
+            person={result.person}
+            pic={result.pic}
+            time={result.time}
+            read={result.read}
+            url={result.url}
+          />
+        );
+        break;
       default:
         break;
     }
+    return element;
   });
 
   return (
@@ -57,11 +99,6 @@ function Notifications() {
 
       {/* Notifications section start */}
       <div id="notifications-section" className="mx-6 mb-6 grid gap-2">
-        {/* <Reaction />
-        <Follow />
-        <Group />
-        <Message />
-        <Comment /> */}
         {renderNotifications}
       </div>
       {/* Notifications section end */}
